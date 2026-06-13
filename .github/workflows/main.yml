@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Ação para disparar e-mail corrigida
+      # Ação para disparar e-mail corrigida com a versão @v3
       - name: Send Email Notification
         if: github.event.action == 'notify'
-        uses: dawiddsql/action-send-mail@v3
+        uses: dawiddr/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -27,7 +27,7 @@ jobs:
           to: oficial.rdaguiar@gmail.com
           from: sistema-app@rdaguiar.com.br
 
-      # Ação para salvar produtos quando o evento for 'add_product'
+      # Ação para salvar produtos
       - name: Save Product
         if: github.event.action == 'add_product'
         run: |
