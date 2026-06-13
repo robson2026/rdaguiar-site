@@ -8,13 +8,15 @@ on:
 jobs:
   process-event:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
 
-      # Ação para disparar e-mail quando o evento for 'notify'
+      # Ação para disparar e-mail corrigida
       - name: Send Email Notification
         if: github.event.action == 'notify'
-        uses: dawiddr/action-send-mail@v3
+        uses: dawiddsql/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -35,4 +37,3 @@ jobs:
           git add products.json
           git commit -m "Novo produto adicionado via App"
           git push
-          
