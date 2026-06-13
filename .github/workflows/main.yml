@@ -36,5 +36,4 @@ jobs:
           git config user.email "action@github.com"
           git add products.json
           git commit -m "Novo produto adicionado via App"
-          git p
-          ush
+          git push
