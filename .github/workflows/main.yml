@@ -1,0 +1,31 @@
+name: Backend Serverless
+on:
+  repository_dispatch:
+    types: [notify, add_product]
+  push:
+    branches: [main]
+jobs:
+  process-event:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Send Email Notification
+        if: github.event.action == 'notify'
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_SUBJECT: ${{ github.event.client_payload.title }}
+          EMAIL_BODY: ${{ github.event.client_payload.body }}
+        run: python send_email.py
+      - name: Save Product
+        if: github.event.action == 'add_product'
+        run: |
+          echo "${{ github.event.client_payload.product_json }}" >> products.json
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add products.json
+          git commit -m "Novo produto adicionado via App"
+          git pu
+          sh
