@@ -13,19 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Ação para disparar e-mail
+      # Dispara o script Python local para enviar e-mail
       - name: Send Email Notification
         if: github.event.action == 'notify'
-        uses: dawiddr/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USER }}
-          password: ${{ secrets.EMAIL_PASS }}
-          subject: ${{ github.event.client_payload.title }}
-          body: ${{ github.event.client_payload.body }}
-          to: oficial.rdaguiar@gmail.com
-          from: sistema-app@rdaguiar.com.br
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_SUBJECT: ${{ github.event.client_payload.title }}
+          EMAIL_BODY: ${{ github.event.client_payload.body }}
+        run: python send_email.py
 
       # Ação para salvar produtos
       - name: Save Product
@@ -35,5 +31,8 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add products.json
+          git commit -m "Novo produto adicionado via App"
+          git push
+         git add products.json
           git commit -m "Novo produto adicionado via App"
           git push
