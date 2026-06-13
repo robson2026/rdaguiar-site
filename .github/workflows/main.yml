@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Ação para disparar e-mail corrigida com a versão @v3
+      # Ação para disparar e-mail
       - name: Send Email Notification
         if: github.event.action == 'notify'
         uses: dawiddr/action-send-mail@v3
@@ -36,4 +36,5 @@ jobs:
           git config user.email "action@github.com"
           git add products.json
           git commit -m "Novo produto adicionado via App"
-          git push
+          git p
+          ush
