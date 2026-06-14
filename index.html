@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDAGUIAR - Tecnologia e Utilidades</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
@@ -15,11 +16,12 @@
         </div>
         <nav class="topo-links">
             <a href="index.html">Home</a>
-            </nav>
+        </nav>
     </header>
 
-    <div class="banner-container">
-        </div>
+    <div class="banner-container" id="banner-container">
+        <!-- O JS vai carregar o Carrossel aqui -->
+    </div>
 
     <main class="container">
         <aside id="menu-lateral">
@@ -31,15 +33,22 @@
         </aside>
 
         <section id="vitrine">
-            </section>
+            <!-- Os produtos aparecem aqui -->
+        </section>
     </main>
 
     <footer class="newsletter">
         <h3>Cadastre-se em nossa newsletter e receba novidades e promoções</h3>
-        <form action="https://formspree.io/f/mykalblb" method="POST">
-            <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-            <button type="submit">Enviar</button>
+        
+        <div id="form-success" style="display:none; color: #00ff00; font-weight: bold; margin-bottom: 15px;">
+            Obrigado pelo seu cadastro!
+        </div>
+
+        <form id="my-form" action="https://formspree.io/f/mykalblb" method="POST">
+            <input type="email" name="email" id="email" placeholder="Seu melhor e-mail" required data-fs-field>
+            <button type="submit" data-fs-submit-btn>Enviar</button>
         </form>
+
         <div class="social-icons">
             <a href="#"><img src="assets/icon_instagram.svg" alt="Instagram"></a>
             <a href="#"><img src="assets/icon_facebook.svg" alt="Facebook"></a>
@@ -47,6 +56,18 @@
         </div>
     </footer>
 
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { 
+        formElement: '#my-form', 
+        formId: 'mykalblb',
+        onSuccess: function() {
+            document.getElementById('my-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <script src="script.js"></script>
 </body>
 </html>
