@@ -1,0 +1,22 @@
+body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+
+/* Topo Grafite */
+header { background-color: #1a1a1a; color: #fff; padding: 15px; display: flex; justify-content: space-between; }
+header a { color: white; text-decoration: none; }
+
+/* Wrapper e Menu */
+.wrapper { display: flex; }
+#menu-lateral { width: 200px; background-color: #2c2c2c; color: white; min-height: 100vh; padding: 20px; }
+
+/* Carrossel Branco */
+.box-branco { background: white; border: 2px solid #ddd; padding: 20px; margin: 20px; min-height: 200px; text-align: center; }
+
+/* Vitrine */
+#vitrine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px; }
+.card { background: white; padding: 15px; border-radius: 5px; }
+
+@media (max-width: 768px) {
+    #vitrine { grid-template-columns: 1fr; }
+    .wrapper { flex-direction: column; }
+    #menu-lateral { width: 100%; min-height: auto; }
+}
