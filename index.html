@@ -2,37 +2,51 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>RDAGUIAR - Tecnologia</title>
+    <title>RDAGUIAR - Tecnologia e Utilidades</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="topo">
-        <div class="esquerda"><a href="index.html">🏠 Home</a></div>
-        <div class="direita">
-            <span>[Instagram]</span> <span>[Facebook]</span> <span>[E-mail]</span>
+    <header>
+        <div class="logo">LOGO RDAGUIAR</div>
+        <div class="busca">
+            <input type="text" id="campoBusca" placeholder="O que deseja procurar?">
+            <button>Buscar</button>
         </div>
+        <nav class="topo-links">
+            <a href="index.html">Home</a>
+            <!-- Links futuros aqui -->
+        </nav>
     </header>
 
-    <div class="wrapper">
-        <nav id="menu-lateral">
-            <!-- Menu Reservado -->
-            <ul>
-                <li>Menu Reservado</li>
-            </ul>
-        </nav>
-
-        <main>
-            <section id="carrossel" class="box-branco">
-                <!-- Carrossel será carregado aqui -->
-                <div class="slide">Banner Carrossel</div>
-            </section>
-
-            <section id="vitrine">
-                <!-- Produtos serão carregados aqui -->
-            </section>
-        </main>
+    <div class="banner-container">
+        <!-- O JS vai carregar o Carrossel aqui -->
     </div>
-    <script src="script.js"></script>
+
+    <main class="container">
+        <aside id="menu-lateral">
+            <h3>Categorias</h3>
+            <ul id="lista-menu">
+                <li>Menu Reservado 1</li>
+                <li>Menu Reservado 2</li>
+            </ul>
+        </aside>
+
+        <section id="vitrine">
+            <!-- Os produtos aparecem aqui -->
+        </section>
+    </main>
+
+    <footer class="newsletter">
+        <h3>Cadastre-se em nossa newsletter e receba novidades e promoções</h3>
+        <form action="https://formspree.io/f/seu-codigo-aqui" method="POST">
+            <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="social-icons">
+            <img src="icon_instagram.svg" alt="Instagram">
+            <img src="icon_facebook.svg" alt="Facebook">
+            <img src="icon_email.svg" alt="E-mail">
+        </div>
+    </footer>
 </body>
-</htm
-    l>
+</html>
