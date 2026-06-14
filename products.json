@@ -1,0 +1,22 @@
+[
+  {"nome": "Desktop Office i5", "preco": "2500.00", "imagem": "img1.jpg", "link": "#"},
+  {"nome": "Notebook Trabalho", "preco": "3200.00", "imagem": "img2.jpg", "link": "#"},
+  {"nome": "Teclado Mecânico", "preco": "200.00", "imagem": "img3.jpg", "link": "#"},
+  {"nome": "Mouse Ergonômico", "preco": "150.00", "imagem": "img4.jpg", "link": "#"},
+  {"nome": "Monitor 24pol", "preco": "800.00", "imagem": "img5.jpg", "link": "#"},
+  {"nome": "Mousepad Grande", "preco": "50.00", "imagem": "img6.jpg", "link": "#"},
+  {"nome": "Desktop i7 Profissional", "preco": "4500.00", "imagem": "img7.jpg", "link": "#"},
+  {"nome": "Notebook UltraSlim", "preco": "3800.00", "imagem": "img8.jpg", "link": "#"},
+  {"nome": "Teclado sem fio", "preco": "180.00", "imagem": "img9.jpg", "link": "#"},
+  {"nome": "Webcam HD", "preco": "250.00", "imagem": "img10.jpg", "link": "#"},
+  {"nome": "Impressora Laser", "preco": "900.00", "imagem": "img11.jpg", "link": "#"},
+  {"nome": "Adaptador USB-C", "preco": "80.00", "imagem": "img12.jpg", "link": "#"},
+  {"nome": "Suporte Notebook", "preco": "120.00", "imagem": "img13.jpg", "link": "#"},
+  {"nome": "Desktop i3 Básico", "preco": "1900.00", "imagem": "img14.jpg", "link": "#"},
+  {"nome": "Headset Escritório", "preco": "150.00", "imagem": "img15.jpg", "link": "#"},
+  {"nome": "Mouse Bluetooth", "preco": "130.00", "imagem": "img16.jpg", "link": "#"},
+  {"nome": "Pen Drive 64GB", "preco": "40.00", "imagem": "img17.jpg", "link": "#"},
+  {"nome": "Hub USB 3.0", "preco": "90.00", "imagem": "img18.jpg", "link": "#"},
+  {"nome": "Cabo HDMI 2m", "preco": "30.00", "imagem": "img19.jpg", "link": "#"},
+  {"nome": "Mouse Vertical", "preco": "220.00", "imagem": "img20.jpg", "link": "#"}
+]
