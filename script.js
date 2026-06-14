@@ -1,49 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const vitrine = document.getElementById('vitrine');
-    const campoBusca = document.getElementById('campoBusca');
-    const bannerContainer = document.querySelector('.banner-container');
-    
-    let todosProdutos = [];
+// ... dentro do seu script.js ...
 
-    // 1. Carregar Produtos
-    fetch('products.json')
-        .then(response => response.json())
-        .then(data => {
-            todosProdutos = data;
-            renderizarVitrine(data);
-        });
+let fuse; // Variável para o motor de busca
 
-    // 2. Carregar Banners
-    fetch('banners.json')
-        .then(response => response.json())
-        .then(banners => {
-            banners.forEach(b => {
-                bannerContainer.innerHTML += `<img src="${b.img}" alt="Banner Promocional" style="width:100%; height:auto;">`;
-            });
-        });
+// Quando os produtos carregarem, inicializamos o Fuse
+fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        todosProdutos = data;
+        renderizarVitrine(data);
 
-    // 3. Lógica de Busca
-    campoBusca.addEventListener('input', (e) => {
-        const termo = e.target.value.toLowerCase();
-        const filtrados = todosProdutos.filter(p => 
-            p.nome.toLowerCase().includes(termo)
-        );
-        renderizarVitrine(filtrados);
+        // Configuração do Fuse.js
+        const options = {
+            keys: ['nome'], // O que o Fuse deve pesquisar
+            threshold: 0.3  // 0 é exato, 1 é muito permissivo. 0.3 é ideal.
+        };
+        fuse = new Fuse(data, options);
     });
 
-    // Função que desenha os produtos
-    function renderizarVitrine(lista) {
-        vitrine.innerHTML = '';
-        lista.forEach(produto => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <img src="${produto.imagem}" alt="${produto.nome}" style="width:100%; height:150px; object-fit:cover;">
-                <h3>${produto.nome}</h3>
-                <p>R$ ${produto.preco}</p>
-                <a href="${produto.link}" target="_blank" style="display:block; padding:10px; background:#1a1a1a; color:white; text-decoration:none; text-align:center;">Ver Oferta</a>
-            `;
-            vitrine.appendChild(card);
-        });
+// Atualização da lógica de busca
+campoBusca.addEventListener('input', (e) => {
+    const termo = e.target.value;
+    if (termo.length === 0) {
+        renderizarVitrine(todosProdutos);
+        return;
     }
+    const resultados = fuse.search(termo);
+    // Transforma o formato do Fuse no formato que o renderizarVitrine espera
+    const listaFiltrada = resultados.map(r => r.item);
+    renderizarVitrine(listaFiltrada);
 });
