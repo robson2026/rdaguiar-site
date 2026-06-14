@@ -1,7 +1,22 @@
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-header { background-color: #1a1a1a; color: white; display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; }
-.logo { font-size: 24px; font-weight: bold; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; 
+    background-color: #f4f4f4; 
+    color: #333; 
+}
+
+header { 
+    background-color: #1a1a1a; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px 50px; 
+}
+
+.logo { font-size: 24px; font-weight: 600; }
 
 .busca { display: flex; }
 .busca input { padding: 10px; width: 300px; border: none; border-radius: 4px 0 0 4px; }
@@ -11,12 +26,12 @@ header { background-color: #1a1a1a; color: white; display: flex; align-items: ce
 .banner-container img { width: 100%; height: 100%; object-fit: cover; }
 
 .container { display: flex; padding: 20px; gap: 20px; }
-#menu-lateral { width: 250px; background: #2c2c2c; color: white; padding: 20px; min-height: 80vh; }
+#menu-lateral { width: 250px; background: #2c2c2c; color: white; padding: 20px; min-height: 80vh; border-radius: 5px; }
 #vitrine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1; }
 
 .card { background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
 .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 10px; }
-.card h3 { font-size: 16px; margin: 10px 0; }
+.card h3 { font-size: 16px; margin: 10px 0; font-weight: 600; }
 .card a { display: block; padding: 10px; background: #1a1a1a; color: white; text-decoration: none; border-radius: 4px; margin-top: 10px; }
 
 .newsletter { background: #1a1a1a; color: white; padding: 40px; text-align: center; margin-top: 40px; }
@@ -29,6 +44,5 @@ header { background-color: #1a1a1a; color: white; display: flex; align-items: ce
     header { flex-direction: column; gap: 15px; }
     .container { flex-direction: column; }
     #menu-lateral { width: 100%; min-height: auto; }
-    #vitrine { grid-template-columns: 1
-      fr; }
+    #vitrine { grid-template-columns: 1fr; }
 }
