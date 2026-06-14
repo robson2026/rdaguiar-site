@@ -1,4 +1,8 @@
 [
-  {"img": "banner1.jpg"}, {"img": "banner2.jpg"}, {"img": "banner3.jpg"},
-  {"img": "banner4.jpg"}, {"img": "banner5.jpg"}, {"img": "banner6.jpg"}
+  {"img": "banner_01.webp"},
+  {"img": "banner_02.webp"},
+  {"img": "banner_03.webp"},
+  {"img": "banner_04.webp"},
+  {"img": "banner_05.webp"},
+  {"img": "banner_06.webp"}
 ]
