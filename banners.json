@@ -1,8 +1,8 @@
 [
-  {"img": "banner_01.webp"},
-  {"img": "banner_02.webp"},
-  {"img": "banner_03.webp"},
-  {"img": "banner_04.webp"},
-  {"img": "banner_05.webp"},
-  {"img": "banner_06.webp"}
+  {"img": "assets/carrossel/banner_01.webp"},
+  {"img": "assets/carrossel/banner_02.webp"},
+  {"img": "assets/carrossel/banner_03.webp"},
+  {"img": "assets/carrossel/banner_04.webp"},
+  {"img": "assets/carrossel/banner_05.webp"},
+  {"img": "assets/carrossel/banner_06.webp"}
 ]
