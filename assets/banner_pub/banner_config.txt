@@ -1,3 +1,0 @@
-banner_01.webp|10
-banner_02.webp|20
-banner_03.webp|8
