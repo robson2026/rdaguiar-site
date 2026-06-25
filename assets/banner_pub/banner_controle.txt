@@ -1,3 +1,0 @@
-banner_01.webp|14|rdaguia.com.br
-banner_02.webp|20|null
-banner_03.webp|8|null
